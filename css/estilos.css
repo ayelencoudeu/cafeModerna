@@ -1,0 +1,458 @@
+* {
+	margin: 0;
+	padding: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: "Open Sans", Arial, Sans-serif;
+	font-size: 16px;
+}
+
+.contenedor {
+	
+	width: 90%;
+	max-width: 1000px;
+	margin: auto;
+	overflow: hidden; /* para trabajar con float */
+
+}
+/* --------- ---------HEADER-------- -----------*/
+
+header{
+	width: 100%;
+	background:url('../img/bg.jpg') #281a0c;
+	background-size: cover;
+	background-attachment: fixed;/* para que el fondo se quede en la pantalla*/
+	background-position: center 0;
+	
+}
+
+header .contenedor{
+	height: 700px; /*Altura al div NO a la etiqueta Header*/
+	position: relative;
+}
+
+header .menu{
+	width: 100%;
+	text-align: right;
+
+}
+
+header .menu a{
+	color:#fff;
+	font-size: 1em;
+	font-weight: 300;
+	display:inline-block;
+	margin: 40px 20px;
+	text-decoration: none;
+	position:relative; /* para trabajar con js y darle el efecto */
+
+}
+
+header .menu a:hover{
+	font-weight: 700;
+}
+header .textos{
+	width: 100%;
+	color:#fff;
+	position: absolute;/* para trabajar con js y darle el efecto */
+	top:50%;
+	margin-top:-52px;
+}
+
+header .textos .nombre{
+	font-size:5em;
+	font-weight: 600;
+}
+
+header .textos .nombre span{
+	font-weight: 300;
+}
+
+header .textos h3{
+	font-size:2em;
+	font-weight: 300;
+}
+
+/*---------- MAIN ------------*/
+
+.main{
+	background: url('../img/bg-textura.png');
+	background-repeat: repeat;
+}
+
+.main .nosotros .contenedor{
+	overflow: visible; /*Para que el sobrabte de la imagen no se corte*/
+	position:relative;/*el contenedor es relativo para que sus elementos hijos se puedan posisionar dnd lo indiquemos */
+
+}
+
+.main .nosotros .contenedor .foto{
+	width: 80%;
+	position: absolute;/*porque la foto va estar por arriba del header y el contenedor tiene posision relativa*/
+	left:0;
+	top:-50px;
+	z-index: 0; /*para que la foto pase por debajo del texto*/
+	box-shadow: 0px 0px 15px rgba(0,0,0,.5); 
+}
+.main .nosotros .contenedor .foto img{
+	vertical-align: top; /*para solucionar el problema de la sombra inferior*/
+	width: 100%; /*de su espacio en .contenedor .foto */
+}
+
+.main .nosotros .contenedor article{
+	position: relative;
+	z-index: 10;
+	background-color: #fff;
+	width: 50%;
+	top:150px;
+	padding: 20px;
+	box-shadow: 0px 0px 15px rgba(0,0,0,.5);
+	float:right;
+}
+
+.main .nosotros .contenedor article h3{ 
+	text-align: center;
+	font-size:3em;
+	font-weight:300;
+	margin-bottom: 20px;
+	color:#6f471f;
+
+}
+
+.main .nosotros .contenedor article p{ 
+	font-size:1em;
+	line-height: 1.2em;
+	font-weight:300;
+	margin-bottom: 10px;
+	text-align: center;
+	color:#6b6969;
+}
+
+/*---------- MAIN Section Menu------------*/
+
+.main .menu{
+	padding-top: 570px;
+	margin-bottom: 50px;
+} 
+
+.main .menu .contenedor .titulo,
+.main .ubicacion .contenedor .titulo,
+.main .formulario .contenedor .titulo
+{
+	color:#6f471f;
+	font-size: 3em;
+	font-weight: 300;
+	text-align: center;
+	margin-bottom: 30px;
+}
+.main .menu .contenedor-menu,
+.main .menu .contenedor-menu2 {
+	border: solid #6f471f 2px;
+	background: transparent; /*para tener un div adentro de otro*/
+	padding: 10px;
+	overflow: hidden;
+}
+
+/*---------- MAIN Section Menu contenido------------*/
+
+.main .menu .contenedor-menu .contenedor-menu2 article{
+	width: 50%;
+	float: left;
+	padding: 20px;
+}
+.main .menu .contenedor-menu .contenedor-menu2 article .categoria{
+	font-size: 1.5em;
+	font-weight: 400;
+	text-align: center;
+	color:#6f471f;
+	margin-bottom: 20px;
+}
+
+.main .menu .contenedor-menu .contenedor-menu2 article .platillo{
+	font-size: 1em;
+	font-weight: 400;
+	color:#6b6969;
+	margin-bottom: 20px;
+	padding-bottom: 20px;
+	border-bottom:2px dotted #6f471f;
+	overflow: hidden;/*ocultar el contenido sobrante y solucionar problemas de float en te nombre y precio*/
+}
+.main .menu .contenedor-menu .contenedor-menu2 article .platillo .nombre{
+	font-size: 1.2em;
+	margin-bottom: 10px;
+	float:left;
+	color:#6f471f;
+}
+
+.main .menu .contenedor-menu .contenedor-menu2 article .platillo .precio{
+	font-size: 1.2em;
+	margin-bottom: 10px;
+	float:right;
+	color:#6b6969;
+}
+.main .menu .contenedor-menu .contenedor-menu2 article .platillo .descripcion {
+	font-size: 0.8em;
+	color:#6b6969;
+	clear:both; /*soluciono que se acomode en el espacio del float de los elementos de arriba.*/
+}
+
+/*---------- Main GALERIA --------------*/
+
+.main .galeria {
+	overflow: hidden;/* como galeriaes el contenedor principal le aplico un overfloe para no tener problemas con el float de las imagenes*/
+	margin-bottom: 30px;
+}
+
+.main .galeria .foto {
+	width: 25%;
+	float:left;
+}
+
+.main .galeria .foto img{
+	width: 100%;
+	vertical-align: top;
+	opacity: 0.4;
+}
+
+.main .galeria .foto img:hover{
+	opacity:1;
+	-webkit-transition: all .3s ease;
+	-o-transition: all .3s ease;
+	transition: all .3s ease;
+}
+
+/*------- Formulario----------*/
+
+.main .formulario .contenedor-formulario {
+	padding: 20px;
+	overflow: hidden;
+}
+
+.main .formulario .contenedor-formulario .conetenedor-input{
+	width: 50%;
+	float:left;
+}
+
+.main .formulario .contenedor-formulario .mensaje{
+	width: 45%;
+	margin-bottom: 20px;
+	border-left: solid 1px #6f471f;
+	float:right;
+}
+
+.main .formulario .contenedor-formulario .conetenedor-input input[type="text"],
+.main .formulario .contenedor-formulario .conetenedor-input input[type="email"]{
+	display:block;
+	width: 100%;
+	margin-bottom: 20px;
+	padding: 15px 10px;
+	border:none;
+	border-bottom: solid #6b6969 2px;
+	font-family: "Open Sans", Arial, Sans-serif;
+	font-size: 1em;
+	background-color: transparent;
+}
+
+.main .formulario .contenedor-formulario .conetenedor-input input[type="text"]:focus,
+.main .formulario .contenedor-formulario .conetenedor-input input[type="email"]:focus{ 
+	border-bottom: solid #6f471f 4px;
+}
+
+.main .formulario .contenedor-formulario .mensaje textarea{
+	padding: 10px;
+	display:block;
+	width: 100%;
+	background-color: transparent;
+	border:none;
+	height: 200px;
+	font-family: "Open Sans", Arial, Sans-serif;
+	font-size: 1em;
+}
+
+.main .formulario .contenedor-formulario .error{
+	border:solid red 1px;
+	clear:both;
+	display: none;
+	margin-top: 30px;
+	background:#ce1818;
+	color:#fff;
+	padding: 15px 10px;
+	padding-left: 40px;
+}
+.main .formulario .contenedor-formulario .btn{
+	width: 100%;
+	margin: auto;
+	text-align: center;
+	background:#6f471f;
+	color:#fff;
+	border:none;
+	display: block;
+	padding: 10px;
+	cursor: pointer;
+	border-radius: 0 0 8px 8px;
+	font-family: "Open Sans", Arial, Sans-serif;
+	font-size: 1em;
+	margin-bottom: 20px;
+}
+.main .formulario .contenedor-formulario .btn:focus{
+	background:#775f48;;
+}
+
+/*---------- Main Ubicacion --------------*/
+.main .ubicacion{
+	padding: 40px;
+	overflow: hidden;
+}
+
+.main .ubicacion .contenedor .direccion{
+	text-align: center;
+	float:left;
+	width: 50%;
+	
+}
+
+.main .ubicacion .contenedor .horarios{
+	text-align: center;
+	float:right;
+	width: 50%;
+}
+
+.main .ubicacion .contenedor .direccion h4,
+.main .ubicacion .contenedor .horarios h4{
+	font-size: 1.5em;
+	color:#6f471f;
+	font-weight: 600;
+	margin-bottom: 15px;
+}
+
+
+.main .ubicacion .contenedor .direccion p,
+.main .ubicacion .contenedor .horarios p{
+	margin-bottom: 10px;
+}
+
+
+.main .mapa {
+	width: 90%;
+	margin: auto;
+	overflow: hidden;
+}
+
+.main .mapa iframe{
+	width: 100%;
+
+}
+
+/*---- Footer-----*/
+
+footer {
+	background:#6f471f;
+}
+
+footer .copyright{
+	text-align: center;
+	padding: 15px 0px;
+	color:#fff;
+}
+
+/*------MEDIA QUERIS------*/
+
+@media screen and (max-width: 800px) {
+	header .contenedor{
+		height: auto;
+		position:static;
+	}
+
+	header .textos{
+		position:static;/* para que no tenga el efecto */
+		margin:100px 0;
+	}
+	header .menu{
+		text-align: center;
+	}
+	header .textos .nombre{
+		font-size:2.5em;
+		font-weight: 600;
+	}
+	header .textos h3{
+		font-size:1.2em;
+	}
+	.main .nosotros .contenedor .foto{
+		width: 100%;
+		position: relative; /* para que se pueda seguir superponiendo al header */
+		top:-30px;
+	}
+	.main .nosotros .contenedor article{
+		position: relative;
+		z-index: 10;
+		width: 100%;
+		top:-50px;
+		transform:translate(0px 0);
+	}
+	.main .menu{
+		padding-top: 200px;
+	}
+	.main .menu .contenedor-menu .contenedor-menu2 article{
+		width: 100%;
+	} 
+	.main .galeria .foto {
+		width: 50%;
+	}
+	.main .mapa {
+		width: 80%;
+		margin:auto; 
+	}
+}
+
+@media screen and (max-width: 425px){
+	
+	header .menu{
+		text-align: left;
+	}
+	header .menu a{
+		font-size: 0.7em;
+		margin: 20px 5px;
+	}
+	
+	header .menu a:hover{
+		font-weight: 300;
+	}
+
+	.main .formulario .contenedor-formulario .conetenedor-input{
+	width: 100%;
+	float:none;
+	}
+	.main .formulario .contenedor-formulario .mensaje{
+	width: 100%;
+	float:none;
+	border-left: none;
+	height: 130px;
+	}
+	
+	.main .ubicacion .contenedor .direccion{
+		text-align: center;
+		float:none;
+		width: 110%;
+	
+	}
+
+	.main .ubicacion .contenedor .horarios{
+		text-align: center;
+		float:none;
+		width: 100%;
+	}
+	.main .ubicacion .contenedor .direccion h4,
+	.main .ubicacion .contenedor .horarios h4{
+		margin-bottom: 5px;
+	}
+
+	.main .mapa {
+		width: 90%;
+		margin:auto; 
+	}
+
+}
